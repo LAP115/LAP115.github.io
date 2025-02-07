@@ -40,8 +40,10 @@ main {
     clear:left;
 }
 main h3 {
-    margin-top: 3em;
+    margin: 3em 2em 1.5em;
     font-size: 105%;
+    border: 5px;
+    border-color: blue;
 }
 #list {
     line-height: 105%;
