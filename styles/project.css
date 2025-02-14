@@ -1,22 +1,34 @@
 html {
-    background: linear-gradient(to left, #ffffff, #cccccc);
+    background-image: linear-gradient(to left, white 0%, #f33405 100%);
 }
-
-body {
+body { 
+    font-family: Arial, Helvetica, sans-serif; 
+    font-size: 100%;
     width: 90%;
-    margin: auto;
+    background-color: white;
+    margin: 15px auto;
+    padding: 15px 1.5em;
+    border: 1px solid black;
+    border-radius: 25px;
+    box-shadow: 5px 5px 0 0;
+    background-image: url("../images/shsu.png");
+    background-position: right;
+    background-repeat: repeat-y;
+    background-attachment: fixed;
 }
-
-a {
-    text-decoration: none;
-    color: black;
-}
-
-a:focus, a:hover {
+a:hover, a:focus {
+    font-style: italic;
+    color: orangered;
     border: 3px blue;
     border-style: dotted solid;
 }
-
+header h1, header h2 {
+    text-indent: 30px;
+    color: maroon;
+}
+.shadow {
+    text-shadow: 2px 2px 2px rgb(128, 0, 0);
+}
 article {
     clear: left;
     width: 70%;
@@ -26,36 +38,30 @@ article {
     column-gap: 2em;
     margin-left: 2em;
 }
-
 article h3 {
     column-span: all;
 }
-
 article img {
     float: left;
     margin-right: 1em;
     margin-bottom: 1em;
 }
-
 article p::first-letter {
     font-size: 3em;
     font-weight: bold;
     font-style: italic;
     color: lightgreen;
 }
-
 aside {
     width: 20%;
     float: right;
     background-color: #ffebc6;
     padding: 1em;
 }
-
 footer {
     clear: both;
     border-top: 2px solid maroon;
 }
-
 p.fixed {
     position: fixed;
     bottom: 10px;
