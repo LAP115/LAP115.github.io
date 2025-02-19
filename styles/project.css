@@ -75,11 +75,13 @@ footer p.copyright {
    text-align: center;
    font-size: 80%; 
 }
-p.fixed { width: auto;
+p.fixed {
+    width: auto;
     position: fixed;
-    bottom: 50%;
-    right: 0;
-    right: 0;
+    bottom: 50%; 
+    right: 10px; 
     border: 3px solid darkgreen; 
     background-color: lightgreen;
-}
+    padding: 15px; 
+    font-size: 18px;
+
