@@ -1,0 +1,67 @@
+body {
+    width: 95%;
+    margin: 15px auto;
+    background-image: url('background.jpg');
+    background-repeat: repeat-y;
+    background-attachment: fixed;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+    border-bottom: 2px solid black;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.container {
+    display: flex;
+    gap: 20px;
+}
+
+aside {
+    width: 20%;
+    position: fixed;
+    top: 50px;
+    left: 10px;
+    border-right: 2px solid black;
+    padding-right: 10px;
+}
+
+article {
+    width: 75%;
+    margin-left: 25%;
+    border-left: 2px solid black;
+    padding-left: 20px;
+}
+
+.first-letter {
+    font-size: 2em;
+    font-weight: bold;
+    font-style: italic;
+}
+
+img {
+    float: right;
+    margin: 10px;
+}
+
+footer {
+    text-align: center;
+    border-top: 2px solid black;
+    padding: 10px;
+}
+
+footer a {
+    text-decoration: none;
+    font-weight: bold;
+}
