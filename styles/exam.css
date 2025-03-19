@@ -31,7 +31,7 @@ border-right: 2px solid white; }
 #nav_menu ul li a.current { color: yellow; }
 
 article {
-    clear:both;
+    width: 75%;
 }
 
 aside ol {
@@ -46,6 +46,7 @@ aside ul {
     width: 200px;
     height: 100%;
     background: lightblue;
+    width: 20%;
 }
 .content {
     margin-left: 220px;
