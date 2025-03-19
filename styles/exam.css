@@ -15,7 +15,7 @@ border-right: 2px solid white; }
 #nav_menu ul li a.current { color: yellow; }
 
 article p::first-letter {
-    font-size: 2em;
+    font-size: 4em;
     font-weight: bold;
     font-style: italic;
 }
