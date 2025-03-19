@@ -41,7 +41,7 @@ aside ol {
 aside ul {
     list-style-type: square;
   }
-  .sidebar {
+  .aside {
     position: fixed;
     width: 200px;
     height: 100%;
