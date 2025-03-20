@@ -1,18 +1,26 @@
-article p::first-letter {
+article {
+    width: 75%;
+    float: left;
+    padding: 10px;
+}
+
+article h1, article h2 {
+    color: #0033cc;
+    border-bottom: 2px solid black;
+}
+
+article p {
+    text-align: justify;
+}
+
+article p .first-letter {
     font-size: 2em;
-    font-weight: bold;
     font-style: italic;
+    font-weight: bold;
+    float: left;
+    margin-right: 8px;
 }
-h1 {
-    font-size: 175%;
-    color: maroon;
-    text-indent: 30px;
-}
-h2 {
-    font-size: 130%;
-    color: #800000;
-    text-indent: 30px;
-}
+
 header {
     border-bottom: 2px solid maroon;
     margin-bottom: 10px;
