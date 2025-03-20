@@ -32,7 +32,7 @@ header {
 
 #nav_menu ul {
     list-style-type: none;
-    padding: 0;
+    padding: aside;
     margin: 0;
 }
 
@@ -44,7 +44,7 @@ header {
     text-align: center;
     display: block;
     width: 175px;
-    padding: 1em 0;
+    padding: aside;
     text-decoration: none;
     background-color: blue;
     color: white;
