@@ -3,11 +3,6 @@ article p::first-letter {
     font-weight: bold;
     font-style: italic;
 }
-article {
-    width: 75%;
-    float: left;
-    padding: 10px;
-}
 
 article h1, article h2 {
     color: #0033cc;
