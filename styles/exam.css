@@ -103,7 +103,7 @@ aside ol {
   }
 
 aside ul {
-    list-style-type: circle;
+    list-style-type:decimal;
   }
 aside ul ol {
     list-style-type: lower-alpha;
