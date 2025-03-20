@@ -8,7 +8,7 @@ body {
     width: 90%;
     background-color: white;
     margin: 15px auto;
-    padding: 15px 1.5em;
+    padding: aside;
     border: 1px solid black;
     border-radius: 25px;
     box-shadow: 5px 5px 0 0;
@@ -32,7 +32,7 @@ header {
 
 #nav_menu ul {
     list-style-type: none;
-    padding: aside;
+    padding: 0;
     margin: 0;
 }
 
@@ -44,7 +44,7 @@ header {
     text-align: center;
     display: block;
     width: 175px;
-    padding: aside;
+    padding: 1em 0;
     text-decoration: none;
     background-color: blue;
     color: white;
