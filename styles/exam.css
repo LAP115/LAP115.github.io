@@ -6,8 +6,8 @@ body {
     font-size: 100%;
     width: 90%;
     background-color: #ffffff;
-    background-image:"../images/shsu1.jpg" right repeat-y fixed;
-    
+    background:url("../images/shsu1.jpg") right repeat-y fixed;
+
     margin: 15px auto;
     padding: 15px 1.5em;
     border: 1px solid black;
