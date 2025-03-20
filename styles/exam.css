@@ -19,7 +19,7 @@ body {
 }
 
 header {
-    border-bottom: 30px solid blue;
+    border-bottom: 10px solid blue;
     margin-bottom: 10px;
     padding-bottom: 10px;
     position:relative;
