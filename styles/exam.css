@@ -1,21 +1,8 @@
 article p::first-letter {
     font-size: 2em;
-    font-weight: bold;
     font-style: italic;
+    font-weight: bold;
 }
-
-article h1, article h2 {
-    color: #0033cc;
-    border-bottom: 2px solid black;
-}
-
-article p {
-    text-align: justify;
-}
-header {
-    border-bottom: 2px solid maroon;
-    margin-bottom: 10px;
-    padding-bottom: 10px;
     #nav_menu ul { list-style-type: none; }
     #nav_menu ul li { float: left; }
     #nav_menu ul li a {
@@ -71,25 +58,5 @@ footer {
     padding: 10px;
     border-top: 3px solid black;
 }
-.divider {
-    width: 3px;
-    background: blue;
-    border-left: 2px dotted blue;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-}
 
-.divider.left {
-    left: 30%;
-}
-
-.divider.right {
-    right: 30%;
-}
-.container {
-    display: flex;
-    justify-content: space-between;
-    position: relative;
-}
 
