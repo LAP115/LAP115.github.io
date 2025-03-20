@@ -98,6 +98,16 @@ aside {
     right: 10px;
     top: 100px;
 }
+aside ol {
+    list-style-type: upper-roman;
+  }
+
+aside ul {
+    list-style-type: square;
+  }
+aside ul ol {
+    list-style-type: lower-alpha;
+}
 
 footer {
     clear: both;
