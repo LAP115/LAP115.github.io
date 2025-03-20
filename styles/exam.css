@@ -1,70 +1,16 @@
-article p .first-letter {
-    font-size: 2em;
-    font-style: italic;
-    font-weight: bold;
-    float: left;
-    margin-right: 8px;
+html {
+    background-image: linear-gradient(to left, white 0%, #f33405 100%);
 }
-article p {
-    text-align: justify;
-}
-.wrapper {
-    background: url('background-image.png') right repeat-y fixed;
-    padding: 20px;
-}
-    #nav_menu ul { list-style-type: none; }
-    #nav_menu ul li { float: left; }
-    #nav_menu ul li a {
-    text-align: center;
-    display: block;
-    width: 175px;
-    padding: 1em 0;
-    text-decoration: none;
-    background-color: blue;
-    color: white;
-    font-weight: bold;
-    border-right: 2px solid white; }
-    #nav_menu ul li a.lastitem { border-right: none; }
-    #nav_menu ul li a.current { color: yellow; }
 body {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 100%;
-    width: 95%;
-    background: url('../images/shsu1.jpg') right repeat-y fixed;
+    width: 90%;
+    background-color: white;
     margin: 15px auto;
     padding: 15px 1.5em;
-    border: 3px solid black;
+    border: 1px solid black;
     border-radius: 25px;
     box-shadow: 5px 5px 0 0;
-}
-aside {
-    width: 20%;
-    position: fixed;
-    right: 10px;
-    top: 100px;
-    background-color: lightblue;
-    padding: 10px;
-    border: 2px solid black;
-}
-aside ul {
-    list-style-type: upper-roman;
-    padding-left: 20px;
-}
-
-aside ul ul {
-    list-style-type: disc;
-    padding-left: 20px;
-}
-
-aside ul ul ul {
-    list-style-type: lower-alpha;
-    padding-left: 20px;
-}
-footer {
-    clear: both;
-    text-align: center;
-    padding: 10px;
-    border-top: 3px solid black;
 }
 a:hover, a:focus {
 font-style: italic;
@@ -72,4 +18,74 @@ color: orangered;
 border: 3px blue;
 border-style: dotted solid;
 }
-
+header {
+    border-bottom: 2px solid maroon;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+header h1 {
+    font-size: 175%;
+    color: maroon;
+    text-indent: 30px;
+}
+header h2 {
+    font-size: 130%;
+    color: #800000;
+    text-indent: 30px;
+}
+header img {
+    float: left;
+    margin-left: 2em;
+}
+.shadow {
+    text-shadow: 2px 2px 2px rgb(128, 0, 0);
+}
+article { 
+    clear: both;
+    width: 70%;
+    float: left;
+    column-count: 2;
+    column-rule: 2px dotted maroon;
+    column-gap: 2em;
+    margin-left: 2em;
+}
+article h3{
+    column-span: all;
+}
+article img {
+    float:left;
+    margin-right: 1em;
+    margin-bottom: 1em;
+}
+main {
+    clear:left;
+}
+article p::first-letter {
+    font-size: 3em;
+    font-weight: bold;
+    font-style: italic;
+}
+aside {
+    width: 20%;
+    float: right;
+    background-color:  #ffebc0;
+}
+footer {
+    clear:both;
+    border-top: 2px solid maroon;
+    text-align: center;
+}
+footer p.copyright {
+   text-align: center;
+   font-size: 80%; 
+}
+p.fixed {
+    width: auto;
+    position: fixed;
+    bottom: 40%; 
+    right: 10px; 
+    border: 3px solid darkgreen; 
+    background-color: lightgreen;
+    padding: 20px;
+    font-size: 20px;
+}
