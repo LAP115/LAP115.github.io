@@ -22,7 +22,7 @@ header {
     border-bottom: 30px solid blue;
     margin-bottom: 10px;
     padding-bottom: 10px;
-    position: relative;
+    position:relative;
 }
 
 #nav_menu {
