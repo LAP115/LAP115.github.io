@@ -71,20 +71,25 @@ footer {
     padding: 10px;
     border-top: 3px solid black;
 }
-article::before, article::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
+.divider {
     width: 3px;
     background: blue;
     border-left: 2px dotted blue;
+    position: absolute;
+    top: 0;
+    bottom: 0;
 }
 
-article::before {
-    left: 33%;
+.divider.left {
+    left: 30%;
 }
 
-article::after {
-    right: 33%;
+.divider.right {
+    right: 30%;
 }
+.container {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
