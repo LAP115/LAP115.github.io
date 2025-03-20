@@ -8,7 +8,7 @@ body {
     width: 90%;
     background-color: white;
     margin: 15px auto;
-    padding: aside;
+    padding: 15px 1.5em;
     border: 1px solid black;
     border-radius: 25px;
     box-shadow: 5px 5px 0 0;
@@ -103,6 +103,7 @@ aside {
     position: fixed;
     right: 10px;
     top: 100px;
+    padding: 1em;
 }
 aside ol {
     list-style-type: upper-roman;
