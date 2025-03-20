@@ -23,7 +23,7 @@ header {
     margin-bottom: 20px;
     padding-bottom: 10px;
     position: relative;
-    z-index: 10;
+    z-index: 35;
 }
 
 #nav_menu {
