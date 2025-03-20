@@ -19,11 +19,10 @@ body {
 }
 
 header {
-    border-bottom: 2px solid blue;
+    border-bottom: 25px solid blue;
     margin-bottom: 20px;
     padding-bottom: 10px;
     position: relative;
-    z-index: 35;
 }
 
 #nav_menu {
