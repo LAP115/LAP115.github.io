@@ -1,38 +1,67 @@
 html {
     background-image: linear-gradient(to right, rgb(33, 189, 228) 0%, #ffffff 100%);
 }
+
 body {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 100%;
     width: 90%;
     background-color: #ffffff;
-    background-image:url("../images/shsu1.jpg") right repeat-y fixed;
+    background-image: url("../images/shsu1.jpg");
+    background-position: right;
+    background-repeat: repeat-y;
+    background-attachment: fixed;
     margin: 15px auto;
     padding: 15px 1.5em;
     border: 1px solid black;
     border-radius: 25px;
     box-shadow: 5px 5px 0 0;
 }
-header{
-border-bottom: 2px solid blue;
-margin-bottom: 20px;
-padding-bottom: 10px;
-#nav_menu ul { list-style-type: none; }
-#nav_menu ul li { float: left; }
-#nav_menu ul li a {
-text-align: center;
-display: block;
-width: 175px;
-padding: 1em 0; 
-text-decoration: none;
-background-color: blue;
-color: white;
-font-weight: bold;
-border-right: 2px solid white; }
-#nav_menu ul li a.lastitem { border-right: none; }
-#nav_menu ul li a.current { color: yellow; }
+
+header {
+    border-bottom: 2px solid blue;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    position: relative;
+    z-index: 10;
 }
-article { 
+
+#nav_menu {
+    position: relative;
+    z-index: 20;
+}
+
+#nav_menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#nav_menu ul li {
+    float: left;
+}
+
+#nav_menu ul li a {
+    text-align: center;
+    display: block;
+    width: 175px;
+    padding: 1em 0;
+    text-decoration: none;
+    background-color: blue;
+    color: white;
+    font-weight: bold;
+    border-right: 2px solid white;
+}
+
+#nav_menu ul li a.lastitem {
+    border-right: none;
+}
+
+#nav_menu ul li a.current {
+    color: yellow;
+}
+
+article {
     clear: both;
     width: 70%;
     float: left;
@@ -41,36 +70,43 @@ article {
     column-gap: 2em;
     margin-left: 2em;
 }
-article h3{
+
+article h3 {
     column-span: all;
 }
+
 article img {
-    float:left;
+    float: left;
     margin-right: 1em;
     margin-bottom: 1em;
 }
+
 main {
-    clear:left;
+    clear: left;
 }
+
 article p::first-letter {
     font-size: 3em;
     font-weight: bold;
     font-style: italic;
 }
+
 aside {
     width: 20%;
     float: right;
-    background-color:  #c0ddff;
+    background-color: #c0ddff;
     position: fixed;
     right: 10px;
     top: 100px;
 }
+
 footer {
-    clear:both;
+    clear: both;
     border-top: 2px solid blue;
     text-align: center;
 }
+
 footer p.copyright {
-   text-align: center;
-   font-size: 80%; 
+    text-align: center;
+    font-size: 80%;
 }
