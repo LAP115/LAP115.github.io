@@ -19,9 +19,9 @@ body {
 }
 
 header {
-    border-bottom: 10px solid blue;
-    margin-bottom: 10px;
-    padding-bottom: 10px;
+    border-bottom: 5px solid blue;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
     position:relative;
 }
 
