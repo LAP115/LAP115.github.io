@@ -63,6 +63,8 @@ aside {
     float: right;
     background-color:  #c0ddff;
     position: fixed;
+    right: 10px;
+    top: 100px;
 }
 footer {
     clear:both;
