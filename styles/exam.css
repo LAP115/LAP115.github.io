@@ -72,6 +72,9 @@ article {
 article h1 {
     color:blue
 }
+article h2 {
+    color:blue
+}
 
 article h3 {
     column-span: all;
