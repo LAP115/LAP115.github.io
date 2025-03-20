@@ -6,7 +6,7 @@ body {
     font-size: 100%;
     width: 90%;
     background-color: #ffffff;
-    background:url("../images/shsu1.jpg") right repeat-y fixed;
+    background-image:url("../images/shsu1.jpg") right repeat-y fixed;
 
     margin: 15px auto;
     padding: 15px 1.5em;
