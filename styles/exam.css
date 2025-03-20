@@ -1,3 +1,8 @@
+article p::first-letter {
+    font-size: 2em;
+    font-weight: bold;
+    font-style: italic;
+}
 article {
     width: 75%;
     float: left;
@@ -12,15 +17,6 @@ article h1, article h2 {
 article p {
     text-align: justify;
 }
-
-article p .first-letter {
-    font-size: 2em;
-    font-style: italic;
-    font-weight: bold;
-    float: left;
-    margin-right: 8px;
-}
-
 header {
     border-bottom: 2px solid maroon;
     margin-bottom: 10px;
