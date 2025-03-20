@@ -15,7 +15,7 @@ body {
 }
 header{
 border-bottom: 2px solid blue;
- margin-bottom: 20px;
+margin-bottom: 20px;
 padding-bottom: 10px;
 #nav_menu ul { list-style-type: none; }
 #nav_menu ul li { float: left; }
