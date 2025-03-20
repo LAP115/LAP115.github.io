@@ -13,6 +13,7 @@ body {
     border-radius: 25px;
     box-shadow: 5px 5px 0 0;
 }
+header{
 #nav_menu ul { list-style-type: none; }
 #nav_menu ul li { float: left; }
 #nav_menu ul li a {
@@ -28,6 +29,10 @@ font-weight: bold;
 border-right: 2px solid white; }
 #nav_menu ul li a.lastitem { border-right: none; }
 #nav_menu ul li a.current { color: yellow; }
+border-bottom: 2px solid blue;
+ margin-bottom: 10px;
+padding-bottom: 10px;
+}
 article { 
     clear: both;
     width: 70%;
