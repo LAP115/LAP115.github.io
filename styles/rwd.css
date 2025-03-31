@@ -9,6 +9,8 @@ html, body {
     box-sizing: border-box;
   }
   
+  /*---------------------------------------------------------------*/
+  
   .top-nav {
     display: flex;
     flex-direction: row;
@@ -84,6 +86,7 @@ html, body {
     transform: rotate(-405deg);
   }
   
+  /*----end of menu*/
   
   .menu a {
     text-decoration: none;
