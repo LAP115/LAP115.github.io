@@ -13,13 +13,17 @@ table.first {
     border-collapse: separate;
     border: 2px solid black;
 }
-
+table.first caption {
+    font-weight: bold;
+}
 table.first th, table.first td {
     border: 2px solid blue;
 }
-
 table.first tr:nth-child(odd) {
     background-color: lightblue;
+}
+table.first th {
+    background-color: skyblue;
 }
 
 /*----------------- TABLE 2 ------------------*/
@@ -28,55 +32,50 @@ table.second {
     border: 2px solid purple;
     caption-side: bottom;
 }
-
+table.second caption {
+    font-weight: bold;
+}
 table.second th {
     background-color: salmon;
 }
-
 table.second th, table.second td {
     padding: 0.7em;
     vertical-align: middle;
     border: 2px solid purple;
 }
 
-table.second thead tr:first-child {
-    border-bottom: 2px solid purple;
-}
-
-/*----------------- TABLE 3 (Your Practice) ------------------*/
+/*----------------- TABLE 3 ------------------*/
 table.third {
     border-collapse: collapse;
     width: 100%;
-    border: 2px solid orangered;
+    border-bottom: 3px solid orangered;
 }
-
 table.third th, table.third td {
     padding: 0.7em;
-    border: 2px solid orangered;
+    border: none;
     vertical-align: top;
 }
-
 table.third thead tr:first-child {
-    border-top: 2px solid orangered;
-    background-color: peachpuff;
-    text-align: center;
-}
-
-table.third thead tr:nth-child(2) {
-    background-color: lightcoral;
+    background-color: lightgreen;
     font-weight: bold;
+    text-align: center;
+    border-top: 2px solid orangered;
+    border-left: 2px solid orangered;
+    border-right: 2px solid orangered;
 }
-
-table.third tbody tr:first-child {
-    background-color: #ffe4e1;
+table.third thead tr:nth-child(2) {
+    background-color: mediumseagreen;
+    font-weight: bold;
+    color: black;
+    border-left: 2px solid orangered;
+    border-right: 2px solid orangered;
 }
-
-table.third tbody tr:nth-child(odd) {
-    background-color: #fff0f5;
+table.third tbody tr td {
+    border-left: 2px solid orangered;
+    border-right: 2px solid orangered;
 }
-
-table.third tbody tr:last-child {
-    border-bottom: 2px solid orangered;
+table.third tbody tr:last-child td {
+    border-bottom: none;
 }
 
 /*----------------- MEDIA QUERY ------------------*/
@@ -84,7 +83,6 @@ table.third tbody tr:last-child {
     th, td {
         display: block;
     }
-
     thead, td.number {
         display: none;
         padding: 0;
