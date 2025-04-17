@@ -8,8 +8,7 @@ body {
   
   .slideshow {
     position: relative;
-    max-width: 800px;
-    height: 500px;
+    max-width: 200px;
     margin: auto;
     overflow: hidden;
   }
