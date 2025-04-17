@@ -18,7 +18,7 @@ body {
     width: 100%;
     height: 100%;
     opacity: 0;
-    animation: fade 30s infinite;
+    animation: fade 45s infinite;
   }
   
   .slide img {
