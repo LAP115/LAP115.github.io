@@ -23,7 +23,7 @@ aside ol {
   }
 /*END OF MENU*/
 /*BODY STUFF*/
-body { 
+body {
   font-family: Arial, Helvetica, sans-serif; 
   font-size: 100%;
   width: 1000px;
@@ -33,6 +33,7 @@ body {
   border: 1px solid black;
   border-radius: 25px;
   box-shadow: 5px 5px 0 0;
+}
   a:hover, a:focus {
     font-style: italic;
     color: orangered;
