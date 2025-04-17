@@ -47,3 +47,11 @@ body {
     100% { opacity: 0; }
   }
   /*END OF SLIDESHOW*/
+
+
+  /*footer copyright*/
+  footer p.copyright {
+    text-align: center;
+    font-size: 80%; 
+ }
+ /*END OF COPYRIGHT*/
