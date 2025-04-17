@@ -21,13 +21,7 @@ article {
 aside ol {
     list-style-type: upper-roman;
   }
-
-aside ul {
-    list-style-type: square;
-  }
-
-
-
+/*END OF MENU*/
 /*slideshow stuff*/
 body {
     margin: 0;
