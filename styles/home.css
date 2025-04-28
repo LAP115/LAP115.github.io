@@ -1,18 +1,19 @@
 /*MENU FOR TOP*/
-#nav_menu ul { list-style-type: none; }
-#nav_menu ul li { float: left; }
 #nav_menu ul li a {
-text-align: center;
-display: block;
-width: 175px;
-padding: 1em 0;
-text-decoration: none;
-background-color: rgb(255, 123, 0);
-color: white;
-font-weight: bold;
-border-right: 2px solid white; }
-#nav_menu ul li a.lastitem { border-right: none; }
-#nav_menu ul li a.current { color: rgb(0, 255, 13); }
+  text-align: center;
+  display: block;
+  width: 175px;
+  padding: 1em 0;
+  text-decoration: none;
+  background-color: #222; /* dark background for nav */
+  color: white;
+  font-weight: bold;
+  border-right: 2px solid #555;
+}
+
+#nav_menu ul li a.current {
+  color: limegreen; /* bright green for current page */
+}
 
 article {
     clear:both;
