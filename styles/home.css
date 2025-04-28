@@ -15,13 +15,20 @@
   color: limegreen; /* bright green for current page */
 }
 
-article {
-    clear:both;
+article, aside {
+  background-color: #111; /* very dark gray */
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 15px;
 }
 
-aside ol {
-    list-style-type: upper-roman;
-  }
+aside ol li a {
+  color: lightblue;
+}
+
+aside ol li a:hover {
+  color: orange;
+}
 /*END OF MENU*/
 /*BODY STUFF*/
 body {
