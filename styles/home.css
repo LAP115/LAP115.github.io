@@ -43,6 +43,11 @@ body {
   border-radius: 25px;
   box-shadow: 5px 5px 15px rgba(0,0,0,0.5);
 }
+header {
+  float: left;
+  width: 60%;
+  padding: 20px;
+}
   a:hover, a:focus {
     font-style: italic;
     color: orangered;
@@ -111,11 +116,10 @@ body {
   }
   
   .slideshow-container {
-    position: relative;
-    max-width: 500px; /* larger slideshow */
-    margin: 2em auto;
-    overflow: hidden;
-  }
+    float: right;
+    width: 35%;
+    margin-top: 20px;
+}
   
   .slide img {
     width: 100%; /* fill container */
