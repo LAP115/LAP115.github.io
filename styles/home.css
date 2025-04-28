@@ -146,8 +146,10 @@ body {
 
 
   /*footer copyright*/
-  footer p.copyright {
+  footer p {
     text-align: center;
-    font-size: 80%; 
- }
+    font-size: 80%;
+    color: #777;
+    margin-top: 40px;
+  }
  /*END OF COPYRIGHT*/
