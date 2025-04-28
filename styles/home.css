@@ -103,14 +103,14 @@ header {
 /*END OF BODY*/    
 /*slideshow stuff*/ 
   .slideshow {
-    position: relative;
+    position: absolute;
     max-width: 200px;
     margin: auto;
     overflow: hidden;
   }
   
   .slide {
-    position: relative;
+    position: absolute;
     width: 50%;
     height: 50%;
     opacity: 0;
