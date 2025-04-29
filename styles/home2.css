@@ -119,7 +119,7 @@ header a:hover, footer a:hover {
 
 .slideshow-container {
   width: 100%; 
-  height: 100%;
+  height: 100%
   margin: 0 auto; 
   display: flex; 
   justify-content: center; 
@@ -150,10 +150,9 @@ header a:hover, footer a:hover {
 .slide:nth-child(3) {
   animation-delay: 30s;
 }
-.slide:nth-child(4){
+.slide:nth-child(4) {
   animation-delay: 45s;
 }
-
 /* Fade animation */
 @keyframes fade {
   0%   { opacity: 0; }
