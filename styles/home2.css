@@ -108,20 +108,19 @@ header a:hover, footer a:hover {
 
 .slide {
   position: absolute;
-  width: 50%;
-  height: 50%;
+  width: 100%;
+  height: 100%;
   opacity: 0;
   animation: fade 45s infinite;
 }
 
 .slideshow-container {
-  float: right;
-  width: 35%;
+  width: 100%;
   margin-top: 20px;
 }
 
 .slide img {
-  width: 50%; /* fill container */
+  width: 100%; /* fill container */
   height: auto;
   object-fit: cover;
 }
