@@ -78,7 +78,7 @@ header a:hover, footer a:hover {
 .homepage .content {
   display: flex;
   height: 85%;
-  z-index: 3;
+  z-index: 2;
   align-items: center;
   justify-content: center;
   flex-direction: column;
