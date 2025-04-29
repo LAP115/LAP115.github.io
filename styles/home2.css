@@ -115,8 +115,13 @@ header a:hover, footer a:hover {
 }
 
 .slideshow-container {
-  width: 100%;
-  margin-top: 20px;
+  width: 80%; /* Or any percentage or fixed width you prefer */
+  max-width: 1200px; /* Optional: Set a max width for larger screens */
+  margin: 0 auto; /* Center horizontally */
+  display: flex; /* Enable flexbox */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  position: relative; /* Position it correctly inside the homepage */
 }
 
 .slide img {
