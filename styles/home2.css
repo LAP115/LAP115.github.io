@@ -61,8 +61,6 @@ header a:hover, footer a:hover {
   color: #ddd;
 }
 .homepage {
-  height: 100vh;
-  width: 100%;
   position: relative;
   height: 100vh;
   width: 100%;
@@ -80,7 +78,7 @@ header a:hover, footer a:hover {
 .homepage .content {
   display: flex;
   height: 85%;
-  z-index: 3;
+  z-index: 2;
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -111,8 +109,10 @@ header a:hover, footer a:hover {
 
 .slide {
   position: absolute;
-  width: 100%;
+  top: 0;
+  left: 0;
   height: 100%;
+  width: 100%;
   opacity: 0;
   animation: fade 45s infinite;
 }
@@ -130,9 +130,10 @@ header a:hover, footer a:hover {
 }
 
 .slide img {
-  width: 100%;
   height: 100%;
+  width: 100%;
   object-fit: cover;
+  display: block;
 }
 .clearfix::after {
   content: "";
