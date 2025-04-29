@@ -114,7 +114,7 @@ header a:hover, footer a:hover {
   height: 100%;
   width: 100%;
   opacity: 0;
-  animation: fade 60s infinite;
+  animation: fade 90s infinite;
 }
 
 .slideshow-container {
