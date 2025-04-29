@@ -98,6 +98,59 @@ header a:hover, footer a:hover {
   text-align: center;
   text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
 }
+/*slideshow stuff*/ 
+.slideshow {
+  position: absolute;
+  max-width: 200px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  opacity: 0;
+  animation: fade 45s infinite;
+}
+
+.slideshow-container {
+  float: right;
+  width: 35%;
+  margin-top: 20px;
+}
+
+.slide img {
+  width: 50%; /* fill container */
+  height: auto;
+  object-fit: cover;
+}
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Set delay for each slide */
+.slide:nth-child(1) {
+  animation-delay: 0s;
+}
+.slide:nth-child(2) {
+  animation-delay: 15s;
+}
+.slide:nth-child(3) {
+  animation-delay: 30s;
+}
+
+/* Fade animation */
+@keyframes fade {
+  0%   { opacity: 0; }
+  10%  { opacity: 1; }
+  33.33%  { opacity: 1; }
+  43.33%  { opacity: 0; }
+  100% { opacity: 0; }
+}
+/*END OF SLIDESHOW*/
 .content a {
   color: #000;
   display: block;
