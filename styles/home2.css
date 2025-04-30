@@ -47,13 +47,13 @@ header img {
 .navbar .all-links li {
   position: relative;
   list-style: none;
-  font-size: small;
+  font-size: medium;
 }
 .navbar .logo a {
   display: flex;
   align-items: center;
   margin-left: 0;
-  font-size: medium;
+  font-size: large;
 }
 header a, footer a {
   margin-left: 40px;
