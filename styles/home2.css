@@ -24,7 +24,6 @@ header {
 }
 header img {
   float: left;
-  margin-left: 2em;
 }
 .navbar {
   display: flex;
