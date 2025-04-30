@@ -22,6 +22,10 @@ header {
   justify-content: center;
   background: #003057;
 }
+header img {
+  float: left;
+  margin-left: 2em;
+}
 .navbar {
   display: flex;
   padding: 0 10px;
