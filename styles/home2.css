@@ -59,7 +59,7 @@ header a, footer a {
   display: inline-block;
 }
 header a:hover, footer a:hover {
-  color: ##f47920;
+  color: #f47920;
 }
 .homepage {
   position: relative;
