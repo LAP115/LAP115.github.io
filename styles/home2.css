@@ -53,6 +53,7 @@ header img {
   display: flex;
   align-items: center;
   margin-left: 0;
+  font-size: medium;
 }
 header a, footer a {
   margin-left: 40px;
