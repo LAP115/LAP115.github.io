@@ -174,7 +174,7 @@ header a:hover, footer a:hover {
   background: #fff;
   border: 2px solid #fff;
   transition: 0.4s ease;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 20px rgb(0, 0, 0);
   text-decoration: none;
 }
 .content a:hover {
