@@ -3,7 +3,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
 }
 html {
   scroll-behavior: smooth;
@@ -343,7 +342,6 @@ section .cards .card {
   }
   
   .footer-column p {
-  margin-bottom: 15px;
   font-size: 14px;
   line-height: 1.5;
   }
