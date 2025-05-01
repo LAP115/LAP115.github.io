@@ -300,25 +300,63 @@ section .cards .card {
 .contact form button:hover {
   background: #f47920;
 }
-footer {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  background: #000;
+.site-footer {
+  background-color: #002D62; 
+  color: white;
   padding: 20px 0;
+  font-family: Arial, sans-serif;
 }
-footer div {
-  padding: 0 10px;
+
+.footer-container {
+  width: 90%;
   max-width: 1200px;
-  width: 100%;
+  margin: 0 auto;
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
 }
-footer span {
-  color: #fff;
+
+.footer-image img {
+  max-width: 200px;
+  height: auto;
+  margin-right: 30px;
 }
-footer a {
-  padding: 0;
+
+.footer-columns {
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+}
+
+.footer-column {
+  flex: 1;
+  min-width: 200px;
+  margin: 10px;
+}
+
+.footer-column h4 {
+  margin-bottom: 15px;
+  font-size: 18px;
+  border-bottom: 1px solid #ffffff;
+  padding-bottom: 5px;
+}
+
+.footer-column p {
+  margin-bottom: 15px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.footer-column a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.footer-column a:hover {
+  text-decoration: underline;
+}
+.body-content {
+  padding: 20px;
 }
 @media screen and (max-width: 860px) {
   .navbar .all-links {
