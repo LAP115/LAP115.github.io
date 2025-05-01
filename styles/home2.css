@@ -305,6 +305,7 @@ section .cards .card {
   color: white;
   padding: 20px 0;
   font-family: Arial, sans-serif;
+  height:300px
   }
   
   .footer-container {
