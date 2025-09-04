@@ -14,37 +14,37 @@
     </header>
 
     <main>
-        <!-- Sprint 1: Check-In Form -->
+        <!-- Check-In Form -->
         <section class="card">
             <h2>Check‑In</h2>
             <form>
-                <label for="name">Full Name:</label>
-                <input type="text" id="name" name="name" required>
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="John Doe" required>
 
-                <label for="id">ID / Passport Number:</label>
-                <input type="text" id="id" name="id" required>
+                <label for="id">ID / Passport Number</label>
+                <input type="text" id="id" name="id" placeholder="A1234567" required>
 
-                <label for="stay">Length of Stay (nights):</label>
+                <label for="stay">Length of Stay (nights)</label>
                 <input type="number" id="stay" name="stay" min="1" required>
 
-                <label>Choose Your Complimentary Item:</label>
+                <label>Choose Your Complimentary Item</label>
                 <div class="options">
                     <label><input type="radio" name="gift" value="Snack" required> Snack</label>
                     <label><input type="radio" name="gift" value="Pokemon Card"> Pokémon Card</label>
                 </div>
 
-                <button type="submit">Complete Check‑In</button>
+                <button type="submit">✅ Complete Check‑In</button>
             </form>
         </section>
 
-        <!-- Sprint 2: Check-Out Form -->
+        <!-- Check-Out Form -->
         <section class="card">
             <h2>Check‑Out</h2>
             <form>
                 <label for="feedback">How was your stay?</label>
                 <textarea id="feedback" name="feedback" rows="4" placeholder="Share your thoughts..."></textarea>
 
-                <button type="submit">Submit Feedback</button>
+                <button type="submit">💬 Submit Feedback</button>
             </form>
         </section>
     </main>

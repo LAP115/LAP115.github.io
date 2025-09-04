@@ -1,15 +1,30 @@
+:root {
+    --primary: #27ae60;
+    --primary-dark: #219150;
+    --bg: #f9f9f9;
+    --text: #333;
+    --card-bg: #fff;
+    --radius: 12px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', sans-serif;
     margin: 0;
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.5;
 }
 
 header {
-    background-color: #2c3e50;
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
     color: white;
     text-align: center;
-    padding: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 main {
@@ -21,29 +36,40 @@ main {
 }
 
 .card {
-    background: white;
+    background: var(--card-bg);
     padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    width: 300px;
+    border-radius: var(--radius);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    width: 320px;
+    transition: transform 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
 }
 
 h2 {
-    color: #2c3e50;
+    color: var(--primary-dark);
+    margin-bottom: 1rem;
 }
 
 label {
     display: block;
     margin-top: 1rem;
-    font-weight: bold;
+    font-weight: 600;
 }
 
-input, textarea, button {
+input, textarea {
     width: 100%;
-    padding: 0.5rem;
-    margin-top: 0.3rem;
+    padding: 0.7rem;
+    margin-top: 0.4rem;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: var(--radius);
+    font-size: 1rem;
+}
+
+textarea {
+    resize: none;
 }
 
 .options {
@@ -53,22 +79,40 @@ input, textarea, button {
 }
 
 button {
-    background-color: #27ae60;
+    width: 100%;
+    padding: 0.8rem;
+    margin-top: 1.2rem;
+    background-color: var(--primary);
     color: white;
     border: none;
-    margin-top: 1rem;
-    cursor: pointer;
+    border-radius: var(--radius);
     font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
 }
 
 button:hover {
-    background-color: #219150;
+    background-color: var(--primary-dark);
 }
 
 footer {
     text-align: center;
     padding: 1rem;
-    background-color: #2c3e50;
-    color: white;
+    background-color: #eee;
+    font-size: 0.9rem;
     margin-top: 2rem;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 400px;
+    }
 }
