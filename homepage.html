@@ -1,10 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nomad Nest Hostel</title>
-    <link rel="stylesheet" href="homepage.css">
+    <link rel="stylesheet" href="/styles/homepage.css">
 </head>
 <body>
 
@@ -17,7 +18,7 @@
         <!-- Check-In Form -->
         <section class="card">
             <h2>Check‑In</h2>
-            <form>
+            <form id="check-in-form">
                 <label for="name">Full Name</label>
                 <input type="text" id="name" name="name" placeholder="John Doe" required>
 
@@ -40,12 +41,22 @@
         <!-- Check-Out Form -->
         <section class="card">
             <h2>Check‑Out</h2>
-            <form>
+            <form id="check-out-form">
                 <label for="feedback">How was your stay?</label>
                 <textarea id="feedback" name="feedback" rows="4" placeholder="Share your thoughts..."></textarea>
 
                 <button type="submit">💬 Submit Feedback</button>
             </form>
+        </section>
+
+        <!-- Guest Summary -->
+        <section class="card" id="guest-summary">
+            <!-- Guest summary will be injected here -->
+        </section>
+
+        <!-- Guest Feedback -->
+        <section class="card" id="guest-feedback">
+            <!-- Guest feedback will be injected here -->
         </section>
     </main>
 
@@ -53,5 +64,6 @@
         <p>© 2025 Nomad Nest Hostel</p>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>
