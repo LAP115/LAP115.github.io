@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nomad Nest Hostel</title>
+    <link rel="stylesheet" href="agile1.css">
+</head>
+<body>
+
+    <header>
+        <h1>🏕 Nomad Nest Hostel</h1>
+        <p>Self Check‑In & Check‑Out</p>
+    </header>
+
+    <main>
+        <!-- Sprint 1: Check-In Form -->
+        <section class="card">
+            <h2>Check‑In</h2>
+            <form>
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="id">ID / Passport Number:</label>
+                <input type="text" id="id" name="id" required>
+
+                <label for="stay">Length of Stay (nights):</label>
+                <input type="number" id="stay" name="stay" min="1" required>
+
+                <label>Choose Your Complimentary Item:</label>
+                <div class="options">
+                    <label><input type="radio" name="gift" value="Snack" required> Snack</label>
+                    <label><input type="radio" name="gift" value="Pokemon Card"> Pokémon Card</label>
+                </div>
+
+                <button type="submit">Complete Check‑In</button>
+            </form>
+        </section>
+
+        <!-- Sprint 2: Check-Out Form -->
+        <section class="card">
+            <h2>Check‑Out</h2>
+            <form>
+                <label for="feedback">How was your stay?</label>
+                <textarea id="feedback" name="feedback" rows="4" placeholder="Share your thoughts..."></textarea>
+
+                <button type="submit">Submit Feedback</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Nomad Nest Hostel</p>
+    </footer>
+
+</body>
+</html>
