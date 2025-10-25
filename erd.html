@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Individuals-Groups ERD</title>
+<style>
+body { font-family: Arial, sans-serif; background: #f5f5f5; display: flex; justify-content: center; padding: 40px; }
+.diagram { position: relative; background: #fff; border: 2px solid #333; padding: 40px; border-radius: 12px; }
+.entity { border: 2px solid #003057; border-radius: 8px; padding: 10px 15px; background: #e7f0fa; text-align: center; width: 180px; }
+.connector { position: absolute; background: #333; }
+.label { position: absolute; font-size: 14px; background: #fff; padding: 2px 4px; }
+.relationship { border: 2px dashed #f47920; border-radius: 8px; padding: 10px; text-align: center; background: #fffaf3; width: 180px; }
+</style>
+</head>
+<body>
+<div class="diagram" style="width:700px;height:400px;">
+<div class="entity" style="position:absolute; top:50px; left:60px;">
+<strong>Individuals</strong><br>
+<hr>
+IndividualID (PK)<br>
+FirstName<br>
+LastName<br>
+Email<br>
+CreatedAt
+</div>
+
+
+<div class="relationship" style="position:absolute; top:160px; left:260px;">
+<strong>Memberships</strong><br>
+<hr>
+IndividualID (FK)<br>
+GroupID (FK)<br>
+JoinDate<br>
+Role<br>
+Dues
+</div>
+
+
+<div class="entity" style="position:absolute; top:50px; left:470px;">
+<strong>Groups</strong><br>
+<hr>
+GroupID (PK)<br>
+GroupName<br>
+Description<br>
+CreatedAt
+</div>
+
+
+<!-- Connectors -->
+<div class="connector" style="top:110px; left:230px; width:30px; height:2px;"></div>
+<div class="connector" style="top:110px; left:430px; width:30px; height:2px;"></div>
+
+
+<!-- Labels -->
+<div class="label" style="top:85px; left:185px;">1</div>
+<div class="label" style="top:85px; left:255px;">∞</div>
+<div class="label" style="top:85px; left:435px;">∞</div>
+<div class="label" style="top:85px; left:520px;">1</div>
+</div>
+</body>
+</html>
