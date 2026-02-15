@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wireless Headphone Customer Pain Points</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap');
+
+  :root {
+    --bg: #0d0f14;
+    --surface: #13161e;
+    --surface2: #1a1e29;
+    --border: #252b3b;
+    --accent1: #ff5c3a;
+    --accent2: #ffb347;
+    --accent3: #3af7c8;
+    --accent4: #6b8cff;
+    --text: #e8eaf0;
+    --muted: #6b7394;
+    --glow: rgba(255, 92, 58, 0.15);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    min-height: 100vh;
+    padding: 32px 24px 60px;
+    overflow-x: hidden;
+  }
+
+  /* Background noise texture */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+    background-size: 200px 200px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .wrapper { position: relative; z-index: 1; max-width: 1280px; margin: 0 auto; }
+
+  /* HEADER */
+  header {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 12px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--border);
+    animation: fadeSlideDown 0.7s ease both;
+  }
+  .header-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent1);
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(38px, 5vw, 64px);
+    line-height: 0.95;
+    letter-spacing: 0.01em;
+    background: linear-gradient(135deg, #fff 40%, var(--accent2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .header-meta {
+    text-align: right;
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+  .header-meta strong { color: var(--text); }
+  .header-sub {
+    font-size: 14px;
+    color: var(--muted);
+    max-width: 620px;
+    line-height: 1.6;
+    margin-top: 6px;
+  }
+
+  /* INSIGHT CARDS */
+  .cards-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin: 28px 0;
+    animation: fadeSlideUp 0.7s 0.2s ease both;
+  }
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 20px 22px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .card:hover { transform: translateY(-3px); box-shadow: 0 16px 40px rgba(0,0,0,0.4); }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+  }
+  .card-top .card::before { background: linear-gradient(90deg, var(--accent1), var(--accent2)); }
+  .card-low .card::before { background: linear-gradient(90deg, var(--accent3), var(--accent4)); }
+  .card-avg .card::before { background: linear-gradient(90deg, var(--accent4), #c084fc); }
+  .card-icon {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+  .card-label {
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  .card-value {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 38px;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .card-top .card-value { color: var(--accent1); }
+  .card-low .card-value { color: var(--accent3); }
+  .card-avg .card-value { color: var(--accent4); }
+  .card-desc {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.5;
+    margin-top: 6px;
+  }
+  .card-tag {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 11px;
+    padding: 3px 9px;
+    border-radius: 99px;
+    font-weight: 500;
+  }
+  .card-top .card-tag { background: rgba(255,92,58,0.15); color: var(--accent1); }
+  .card-low .card-tag { background: rgba(58,247,200,0.12); color: var(--accent3); }
+  .card-avg .card-tag { background: rgba(107,140,255,0.12); color: var(--accent4); }
+
+  /* CHARTS GRID */
+  .charts-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+  .chart-panel {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 24px;
+    animation: fadeSlideUp 0.7s ease both;
+  }
+  .chart-panel:nth-child(1) { animation-delay: 0.35s; }
+  .chart-panel:nth-child(2) { animation-delay: 0.45s; }
+  .chart-panel-full {
+    grid-column: 1 / -1;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 24px;
+    animation: fadeSlideUp 0.7s 0.55s ease both;
+  }
+
+  .panel-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  .panel-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 0.03em;
+    color: #fff;
+  }
+  .panel-subtitle {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 3px;
+  }
+  .panel-badge {
+    font-size: 10px;
+    padding: 4px 10px;
+    border-radius: 99px;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 500;
+    white-space: nowrap;
+    margin-top: 2px;
+  }
+
+  canvas { width: 100% !important; }
+  .chart-radar-wrap { height: 380px; display: flex; align-items: center; justify-content: center; }
+  .chart-bar-wrap { height: 380px; }
+  
+  /* WORD CLOUD */
+  .wordcloud-container {
+    position: relative;
+    height: 280px;
+    overflow: hidden;
+    border-radius: 10px;
+    background: var(--surface2);
+  }
+  .wc-word {
+    position: absolute;
+    font-family: 'Bebas Neue', sans-serif;
+    cursor: default;
+    user-select: none;
+    transform-origin: center;
+    animation: floatWord linear infinite;
+    transition: color 0.3s;
+  }
+  .wc-word:hover { filter: brightness(1.4) drop-shadow(0 0 8px currentColor); transform: scale(1.15); }
+
+  @keyframes floatWord {
+    0% { transform: translateY(0px) rotate(var(--rot)); }
+    50% { transform: translateY(var(--float)) rotate(var(--rot)); }
+    100% { transform: translateY(0px) rotate(var(--rot)); }
+  }
+
+  /* SOURCE BAR */
+  .sources-bar {
+    margin-top: 24px;
+    padding: 18px 22px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    display: flex;
+    gap: 28px;
+    flex-wrap: wrap;
+    align-items: center;
+    animation: fadeSlideUp 0.7s 0.65s ease both;
+  }
+  .source-label {
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 600;
+    flex-shrink: 0;
+  }
+  .source-item {
+    font-size: 12px;
+    color: var(--muted);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .source-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--accent1);
+    flex-shrink: 0;
+  }
+  .source-item:nth-child(3) .source-dot { background: var(--accent2); }
+  .source-item:nth-child(4) .source-dot { background: var(--accent3); }
+  .source-item:nth-child(5) .source-dot { background: var(--accent4); }
+
+  /* ANIMATIONS */
+  @keyframes fadeSlideDown {
+    from { opacity: 0; transform: translateY(-18px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeSlideUp {
+    from { opacity: 0; transform: translateY(22px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Responsive */
+  @media (max-width: 800px) {
+    .charts-grid { grid-template-columns: 1fr; }
+    .cards-row { grid-template-columns: 1fr; }
+    .chart-panel-full { grid-column: auto; }
+  }
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-top">
+      <div>
+        <div class="eyebrow">Customer Intelligence Report</div>
+        <h1>Wireless Headphone<br>Pain Points</h1>
+        <p class="header-sub">Analysis of negative & critical reviews across 4 major product lines: AirPods Pro, Sony WH-1000XM5, Bose QuietComfort Ultra, and Beats Studio / Powerbeats.</p>
+      </div>
+      <div class="header-meta">
+        <strong>Sample Base</strong><br>
+        Large-scale review aggregation<br>
+        <strong>Products Covered</strong><br>
+        AirPods Pro · Sony XM5<br>
+        Bose QC Ultra · Beats Studio<br>
+        <strong>Data Type</strong><br>
+        % Share of Critical Reviews
+      </div>
+    </div>
+  </header>
+
+  <!-- INSIGHT CARDS -->
+  <div class="cards-row">
+    <div class="card-top">
+      <div class="card">
+        <div class="card-icon">🔴</div>
+        <div class="card-label">Top Concern</div>
+        <div class="card-value">25%</div>
+        <div class="card-desc"><strong>Comfort & Fit</strong> — Pressure, heat, and poor seal are the leading complaint, mentioned in 20–30% of all critical reviews.</div>
+        <span class="card-tag">Highest frequency</span>
+      </div>
+    </div>
+    <div class="card-low">
+      <div class="card">
+        <div class="card-icon">🟢</div>
+        <div class="card-label">Lowest Concern</div>
+        <div class="card-value">7.5%</div>
+        <div class="card-desc">Three pain points share the lowest frequency at ~5–10%: <strong>ANC Discomfort</strong>, <strong>Portability</strong>, <strong>Call Quality</strong>, and <strong>Workout Stability</strong>.</div>
+        <span class="card-tag">Lowest frequency</span>
+      </div>
+    </div>
+    <div class="card-avg">
+      <div class="card">
+        <div class="card-icon">📊</div>
+        <div class="card-label">Average Complaint Rate</div>
+        <div class="card-value">11.5%</div>
+        <div class="card-desc">Across all 10 identified pain points, the average share of critical reviews is <strong>~11.5%</strong>. Price & Value scores <strong>17.5%</strong> — above average.</div>
+        <span class="card-tag">Across 10 pain points</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHARTS GRID -->
+  <div class="charts-grid">
+
+    <!-- BAR CHART (full width) -->
+    <div class="chart-panel-full">
+      <div class="panel-header">
+        <div>
+          <div class="panel-title">Pain Point Frequency — Ranked Bar Chart</div>
+          <div class="panel-subtitle">Midpoint % of complaint share range, sorted by severity</div>
+        </div>
+        <div class="panel-badge">% of Critical Reviews</div>
+      </div>
+      <div class="chart-bar-wrap">
+        <canvas id="barChart"></canvas>
+      </div>
+    </div>
+
+    <!-- RADAR CHART -->
+    <div class="chart-panel">
+      <div class="panel-header">
+        <div>
+          <div class="panel-title">Radar — Pain Point Coverage</div>
+          <div class="panel-subtitle">Relative frequency across 10 dimensions</div>
+        </div>
+        <div class="panel-badge">Radar View</div>
+      </div>
+      <div class="chart-radar-wrap">
+        <canvas id="radarChart"></canvas>
+      </div>
+    </div>
+
+    <!-- WORD CLOUD -->
+    <div class="chart-panel">
+      <div class="panel-header">
+        <div>
+          <div class="panel-title">Voice of Customer — Keyword Cloud</div>
+          <div class="panel-subtitle">Animated keywords from top review themes</div>
+        </div>
+        <div class="panel-badge">Qualitative</div>
+      </div>
+      <div class="wordcloud-container" id="wordCloud"></div>
+    </div>
+
+  </div>
+
+  <!-- SOURCES -->
+  <div class="sources-bar">
+    <span class="source-label">Data Sources</span>
+    <span class="source-item"><span class="source-dot"></span>Amazon customer reviews (AirPods Pro, Sony WH-1000XM5, Bose QC Ultra, Beats Studio Pro / Studio Buds+, Powerbeats Pro 2)</span>
+    <span class="source-item"><span class="source-dot"></span>PCMag / TechRadar / Rtings.com product review aggregations</span>
+    <span class="source-item"><span class="source-dot"></span>Retailer Q&amp;A sections (Best Buy, Target)</span>
+    <span class="source-item"><span class="source-dot"></span>Perplexity-synthesised review summary (2024–2025)</span>
+  </div>
+
+</div>
+
+<script>
+// ─── DATA ────────────────────────────────────────────────────────────────────
+const labels = [
+  'Comfort & Fit',
+  'Price / Value',
+  'Battery Life',
+  'Durability',
+  'Sound Signature',
+  'Connectivity',
+  'ANC Discomfort',
+  'Case / Portability',
+  'Call Quality',
+  'Workout Stability'
+];
+
+const midpoints = [25, 17.5, 12.5, 12.5, 12.5, 12.5, 7.5, 7.5, 7.5, 7.5];
+
+// Sorted for bar chart
+const sorted = labels.map((l, i) => ({ label: l, val: midpoints[i] }))
+  .sort((a, b) => b.val - a.val);
+const sortedLabels = sorted.map(d => d.label);
+const sortedVals = sorted.map(d => d.val);
+
+// ─── COLOR HELPERS ───────────────────────────────────────────────────────────
+function barColor(val) {
+  if (val >= 20) return '#ff5c3a';
+  if (val >= 15) return '#ffb347';
+  if (val >= 10) return '#6b8cff';
+  return '#3af7c8';
+}
+
+const barColors = sortedVals.map(barColor);
+const barHover = barColors.map(c => c + 'cc');
+
+// ─── BAR CHART ───────────────────────────────────────────────────────────────
+const barCtx = document.getElementById('barChart').getContext('2d');
+new Chart(barCtx, {
+  type: 'bar',
+  data: {
+    labels: sortedLabels,
+    datasets: [{
+      label: '% of Critical Reviews (midpoint)',
+      data: sortedVals,
+      backgroundColor: barColors,
+      hoverBackgroundColor: barHover,
+      borderRadius: 6,
+      borderSkipped: false,
+    }]
+  },
+  options: {
+    indexAxis: 'y',
+    responsive: true,
+    maintainAspectRatio: false,
+    animation: {
+      duration: 1200,
+      easing: 'easeOutQuart',
+      delay: (ctx) => ctx.dataIndex * 80
+    },
+    plugins: {
+      legend: { display: false },
+      tooltip: {
+        backgroundColor: '#1a1e29',
+        borderColor: '#252b3b',
+        borderWidth: 1,
+        titleColor: '#e8eaf0',
+        bodyColor: '#6b7394',
+        padding: 12,
+        callbacks: {
+          label: (ctx) => ` ${ctx.parsed.x}% of critical reviews`,
+          afterLabel: (ctx) => {
+            const ranges = {
+              'Comfort & Fit': '20–30%', 'Price / Value': '15–20%',
+              'Battery Life': '10–15%', 'Durability': '10–15%',
+              'Sound Signature': '10–15%', 'Connectivity': '10–15%',
+              'ANC Discomfort': '5–10%', 'Case / Portability': '5–10%',
+              'Call Quality': '5–10%', 'Workout Stability': '5–10%'
+            };
+            return ` Range: ${ranges[ctx.label] || '—'}`;
+          }
+        }
+      }
+    },
+    scales: {
+      x: {
+        grid: { color: '#252b3b', drawTicks: false },
+        border: { display: false },
+        ticks: {
+          color: '#6b7394',
+          font: { family: 'DM Sans', size: 11 },
+          callback: v => v + '%'
+        },
+        max: 32
+      },
+      y: {
+        grid: { display: false },
+        border: { display: false },
+        ticks: {
+          color: '#e8eaf0',
+          font: { family: 'DM Sans', size: 12.5, weight: '500' },
+          padding: 6
+        }
+      }
+    }
+  }
+});
+
+// ─── RADAR CHART ─────────────────────────────────────────────────────────────
+const radarCtx = document.getElementById('radarChart').getContext('2d');
+new Chart(radarCtx, {
+  type: 'radar',
+  data: {
+    labels: labels,
+    datasets: [{
+      label: 'Complaint Frequency (%)',
+      data: midpoints,
+      backgroundColor: 'rgba(255, 92, 58, 0.15)',
+      borderColor: '#ff5c3a',
+      borderWidth: 2,
+      pointBackgroundColor: '#ff5c3a',
+      pointBorderColor: '#ff5c3a',
+      pointHoverBackgroundColor: '#ffb347',
+      pointHoverBorderColor: '#ffb347',
+      pointRadius: 5,
+      pointHoverRadius: 7,
+    }, {
+      label: 'Industry Average (11.5%)',
+      data: Array(10).fill(11.5),
+      backgroundColor: 'rgba(107, 140, 255, 0.08)',
+      borderColor: 'rgba(107, 140, 255, 0.5)',
+      borderWidth: 1.5,
+      borderDash: [4, 4],
+      pointRadius: 0,
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    animation: { duration: 1400, easing: 'easeOutQuart' },
+    plugins: {
+      legend: {
+        display: true,
+        position: 'bottom',
+        labels: {
+          color: '#6b7394',
+          font: { family: 'DM Sans', size: 11 },
+          boxWidth: 12,
+          padding: 16
+        }
+      },
+      tooltip: {
+        backgroundColor: '#1a1e29',
+        borderColor: '#252b3b',
+        borderWidth: 1,
+        titleColor: '#e8eaf0',
+        bodyColor: '#6b7394',
+        padding: 10,
+        callbacks: {
+          label: (ctx) => ` ${ctx.dataset.label}: ${ctx.parsed.r}%`
+        }
+      }
+    },
+    scales: {
+      r: {
+        min: 0,
+        max: 30,
+        ticks: {
+          stepSize: 10,
+          color: '#6b7394',
+          backdropColor: 'transparent',
+          font: { family: 'DM Sans', size: 10 },
+          callback: v => v + '%'
+        },
+        grid: { color: '#252b3b' },
+        angleLines: { color: '#252b3b' },
+        pointLabels: {
+          color: '#aab0cc',
+          font: { family: 'DM Sans', size: 11, weight: '500' },
+          padding: 8
+        }
+      }
+    }
+  }
+});
+
+// ─── ANIMATED WORD CLOUD ─────────────────────────────────────────────────────
+const keywords = [
+  { text: 'PRESSURE',    size: 46, color: '#ff5c3a', dur: 7 },
+  { text: 'BATTERY',     size: 38, color: '#ffb347', dur: 9 },
+  { text: 'DURABILITY',  size: 32, color: '#6b8cff', dur: 11 },
+  { text: 'CONNECTIVITY',size: 28, color: '#3af7c8', dur: 8 },
+  { text: 'OVERPRICED',  size: 42, color: '#ff5c3a', dur: 10 },
+  { text: 'SWEAT',       size: 22, color: '#6b8cff', dur: 6 },
+  { text: 'ANC',         size: 36, color: '#ffb347', dur: 13 },
+  { text: 'FIT',         size: 30, color: '#3af7c8', dur: 7.5 },
+  { text: 'CRACKING',    size: 24, color: '#ff5c3a', dur: 9 },
+  { text: 'LATENCY',     size: 26, color: '#aab0cc', dur: 12 }
+];
+
+const wcContainer = document.getElementById('wordCloud');
+const containerW = wcContainer.offsetWidth || 480;
+const containerH = 280;
+
+// Manual layout positions (% based) for a natural cloud look
+const positions = [
+  { left: 10,  top: 8  },
+  { left: 52,  top: 5  },
+  { left: 28,  top: 45 },
+  { left: 62,  top: 40 },
+  { left: 5,   top: 55 },
+  { left: 75,  top: 65 },
+  { left: 38,  top: 72 },
+  { left: 15,  top: 30 },
+  { left: 65,  top: 20 },
+  { left: 50,  top: 62 }
+];
+
+keywords.forEach((kw, i) => {
+  const el = document.createElement('span');
+  el.className = 'wc-word';
+  el.textContent = kw.text;
+  const rot = (Math.random() - 0.5) * 18;
+  const floatPx = (Math.random() * 10 + 4) * (Math.random() > 0.5 ? 1 : -1);
+  el.style.cssText = `
+    left: ${positions[i].left}%;
+    top: ${positions[i].top}%;
+    font-size: ${kw.size}px;
+    color: ${kw.color};
+    --rot: ${rot}deg;
+    --float: ${floatPx}px;
+    animation-duration: ${kw.dur}s;
+    animation-delay: ${-Math.random() * kw.dur}s;
+    text-shadow: 0 0 20px ${kw.color}66;
+    opacity: 0;
+    transition: opacity 0.5s;
+  `;
+  wcContainer.appendChild(el);
+  setTimeout(() => el.style.opacity = '0.85', 100 + i * 120);
+});
+</script>
+</body>
+</html>
